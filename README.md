@@ -160,6 +160,11 @@ Enter a website URL you own or are authorized to test, start the scan, and revie
 
 ## 📊 Sample Output
 
+![WebShield Home Page](images/webshield-home.png)
+
+![WebShield Home Page](images/webshield-results.png)
+
+
 A scan report may contain:
 
 - Website URL
