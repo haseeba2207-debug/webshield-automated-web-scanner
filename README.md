@@ -1,2 +1,48 @@
-# webshield-automated-web-scanner
-WebShield is a Python Flask-based automated web security scanner that checks websites for HTTPS usage, missing security headers, cookie security settings, and potential CORS misconfigurations. It generates a security score and detailed findings to help users identify basic web security issues.
+WebShield — Automated Web Scanner
+Project description
+WebShield is a beginner-friendly Python Flask web application that checks selected website response configuration signals. It reports whether the submitted URL uses HTTPS, checks six common security headers, looks at selected CORS response headers, reviews cookie attributes returned in the response, and detects redirects without following them automatically. Users can view the results in a web page and download a JSON report.
+Technologies used
+- Python
+- Flask
+- Requests
+- HTML and CSS (embedded in the Python file)
+- JSON
+Dataset
+Dataset link: Not applicable. This project does not train a machine-learning model or require a dataset. It sends an HTTP request to the public website URL entered by the user and analyzes the response it receives.
+Project files
+- HaseebaAli_AutomatedWebScanner.py — complete single-file Flask application.
+- requirements.txt — required Python libraries.
+- HaseebaAli_ProjectReport.docx — project documentation.
+Setup and run instructions
+1. Install Python 3.10 or newer.
+2. Open a terminal in the project folder.
+3. (Recommended) Create and activate a virtual environment.
+   Windows PowerShell
+   python -m venv venv
+   .\venv\Scripts\Activate.ps1
+4. Install dependencies:
+   python -m pip install -r requirements.txt
+5. Start the application:
+   python HaseebaAli_AutomatedWebScanner.py
+6. Open http://127.0.0.1:5000 in your browser.
+7. Enter a URL such as https://example.com, click Scan website, review the findings, and optionally download the JSON report.
+Main features
+- URL format and public-host validation.
+- HTTPS usage check.
+- Checks for Content-Security-Policy, Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Referrer-Policy, and Permissions-Policy.
+- Basic inspection of CORS response headers.
+- Basic review of Secure, HttpOnly, and SameSite cookie attributes.
+- Redirect detection.
+- A simple educational configuration score.
+- JSON report download.
+- User-friendly error messages for common connection problems.
+Limitations and responsible use
+- This is an educational prototype, not a full vulnerability scanner or penetration-testing tool.
+- A missing header is not automatically proof of a vulnerability; configuration depends on the website and its use case.
+- The score is a simple heuristic and should not be treated as a formal security rating.
+- Websites may block automated requests, return different responses, or require authentication.
+- The scanner checks a single response and does not follow redirects.
+- Use the tool only on websites you own or have explicit permission to test. Do not use it to bypass access controls or disrupt services.
+- Before deploying publicly, add stronger SSRF/DNS-rebinding defenses, rate limiting, production server configuration, and additional testing. Do not run Flask debug mode in production.
+Author
+Haseeba Ali
